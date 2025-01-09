@@ -1,0 +1,7 @@
+print(Movie.genres_menu())
+
+m1 = Movie('T1', 2000, 'D1', 5, [3, 4, 5, 8])
+print(m1.genres_string())
+
+m1 = Movie('T1', 2000, 'D1', 5, [3, 4, 5, 8])
+print(m1.genres_list_string())
