@@ -2,11 +2,11 @@
 -------------------------------------------------------
 Movie class definition.
 -------------------------------------------------------
-Author:  David Brown
-ID:      999999999
-Email:   dbrown@wlu.ca
+Author:  Jaspreet Jawanda
+ID:      169083252
+Email:   Jawa3252@mylaurier.ca
 Section: CP164 B
-__updated__ = "2020-09-30"
+__updated__ = "2025-01-10"
 -------------------------------------------------------
 """
 

@@ -26,7 +26,7 @@ def get_movie():
     # Your code here
 
     title = input("Title: ")
-    year = int(input("Year of release:"))
+    year = int(input("Year of release: "))
     director = input("Director: ")
     rating = float(input("Rating:"))
     genres = read_genres()
