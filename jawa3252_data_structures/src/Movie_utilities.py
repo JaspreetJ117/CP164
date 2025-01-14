@@ -149,7 +149,7 @@ def write_movies(fv, movies):
     """
 
     # Your code here
-
+    
     return
 
 
@@ -170,6 +170,13 @@ def get_by_year(movies, year):
     """
 
     # Your code here
+    
+    ymovies = []
+    
+    for movie in movies:
+        if movie.year >= year:
+            ymovies.append(movies)
+
 
     return ymovies
 
@@ -192,7 +199,12 @@ def get_by_rating(movies, rating):
     """
 
     # Your code here
-
+    rmovies = []
+    
+    for movie in movies:
+        if movie.rating >= rating:
+            rmovies.append(movies)
+    
     return rmovies
 
 
@@ -213,7 +225,13 @@ def get_by_genre(movies, genre):
     """
 
     # Your code here
-
+    
+    gmovies = []
+    
+    for movie in movies:
+        if genre in movie.genere:
+            gmovies.append(movies)
+    
     return gmovies
 
 
@@ -233,9 +251,13 @@ def get_by_genres(movies, genres):
             all the genres in genres (list of Movie)
     -------------------------------------------------------
     """
-
-    # Your code here
-
+    gmovies = []
+    sorted_genres = sorted(genres)  # Sort a copy of genres to avoid modifying the original
+    
+    for movie in movies:
+        if all(genre in movie.genres for genre in sorted_genres):
+            gmovies.append(movie)
+    
     return gmovies
 
 
@@ -256,5 +278,13 @@ def genre_counts(movies):
     """
 
     # Your code here
+    counts = []
+    
+    for i in range(len(Movie.GENRES)):
+        count = 0
+        for movie in movies:
+            if i in movie.genres:
+                count += 1
+        counts.append(count)
 
     return counts
