@@ -8,21 +8,17 @@ Email:   jawa3252@mylaurier.ca
 __updated__ = "2025-01-14"
 -------------------------------------------------------
 """
-
-#Imports
-from Movie_utilities import get_by_year, read_movies
+#import 
+from Movie_utilities import get_by_genres, read_movies
 
 fv = open("movies.txt", "r")
 movies = read_movies(fv)
 
-year = 2005
+numbers = [3,4,5,8]
+lister = get_by_genres(movies, numbers)
 
-moviesy = get_by_year(movies, year)
-print(f"Year selected: {year}")
-print("Movies: ")
-print()
-for i in range(len(moviesy)):
-    print(moviesy[i])
+for each in lister:
+    print(each)
     print()
-
+ 
 

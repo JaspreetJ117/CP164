@@ -9,20 +9,15 @@ __updated__ = "2025-01-14"
 -------------------------------------------------------
 """
 
-#Imports
-from Movie_utilities import get_by_year, read_movies
+#imports
+from Movie_utilities import get_by_genre, read_movies
 
 fv = open("movies.txt", "r")
 movies = read_movies(fv)
 
-year = 2005
+numbers = 1
+lister = get_by_genre(movies, numbers)
 
-moviesy = get_by_year(movies, year)
-print(f"Year selected: {year}")
-print("Movies: ")
-print()
-for i in range(len(moviesy)):
-    print(moviesy[i])
+for each in lister:
+    print(each)
     print()
-
-

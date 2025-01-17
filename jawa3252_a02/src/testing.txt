@@ -1,0 +1,84 @@
+"""
+-------------------------------------------------------
+Lab Testing
+-------------------------------------------------------
+Author:  Jaspreet
+ID:      169083252
+Email:   jawa3252@mylaurier.ca
+Version: 2025-01-10
+-------------------------------------------------------
+"""
+-------------------------------------------------------
+t01
+-------------------------------------------------------
+Year selected: 2005
+Movies: 
+
+Title:    Broken Flowers
+Year:     2005
+Director: Jim Jarmusch
+Rating:   7.2
+Genres:   romance, comedy
+-------------------------------------------------------
+t02
+-------------------------------------------------------
+Title:    Star Wars: Episode IV - A New Hope
+Year:     1977
+Director: George Lucas
+Rating:   8.7
+Genres:   science fiction, action
+
+Title:    Z
+Year:     1969
+Director: Costa-Gavras
+Rating:   8.2
+Genres:   drama
+
+Title:    Wonder Woman
+Year:     2017
+Director: Patty Jenkins
+Rating:   8.1
+Genres:   fantasy, action
+-------------------------------------------------------
+t03
+-------------------------------------------------------
+Title:    Stardust
+Year:     2007
+Director: Matthew Vaughn
+Rating:   7.7
+Genres:   fantasy, comedy
+
+Title:    Jason and the Argonauts
+Year:     1963
+Director: Don Chaffey
+Rating:   7.4
+Genres:   fantasy, action
+
+Title:    Wonder Woman
+Year:     2017
+Director: Patty Jenkins
+Rating:   8.1
+Genres:   fantasy, action
+-------------------------------------------------------
+t04
+-------------------------------------------------------
+Title:    Dellamorte Dellamore
+Year:     1994
+Director: Michele Soavi
+Rating:   7.2
+Genres:   romance, comedy, zombie, horror
+-------------------------------------------------------
+t05
+-------------------------------------------------------
+science fiction Has: 6
+fantasy Has: 3
+drama Has: 2
+romance Has: 3
+comedy Has: 8
+zombie Has: 1
+action Has: 5
+historical Has: 0
+horror Has: 4
+war Has: 1
+mystery Has: 0
+-------------------------------------------------------

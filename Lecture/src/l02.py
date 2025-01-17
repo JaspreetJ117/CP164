@@ -124,12 +124,12 @@ class Deque:
     
 """
 Summary of Operations:
-Stack (LIFO):
+Stack (Last in first out):
 push: Add to the top.
 pop: Remove from the top.
 peek: Look at the top.
 
-Queue (FIFO):
+Queue (First in First Out):
 enqueue: Add to the back.
 dequeue: Remove from the front.
 peek: Look at the front.
@@ -143,4 +143,5 @@ remove_back: Remove from the back.
 
 """
 Deepcopy what is it? Why use deepcopy? Where do I use it?
+What is Backtracking?
 """

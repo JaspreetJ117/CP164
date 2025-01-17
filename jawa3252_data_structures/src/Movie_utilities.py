@@ -174,8 +174,8 @@ def get_by_year(movies, year):
     ymovies = []
     
     for movie in movies:
-        if movie.year >= year:
-            ymovies.append(movies)
+        if movie.year == year:
+            ymovies.append(movie)
 
 
     return ymovies
@@ -203,7 +203,7 @@ def get_by_rating(movies, rating):
     
     for movie in movies:
         if movie.rating >= rating:
-            rmovies.append(movies)
+            rmovies.append(movie)
     
     return rmovies
 
@@ -229,8 +229,8 @@ def get_by_genre(movies, genre):
     gmovies = []
     
     for movie in movies:
-        if genre in movie.genere:
-            gmovies.append(movies)
+        if genre in movie.genres:
+            gmovies.append(movie)
     
     return gmovies
 
@@ -252,7 +252,7 @@ def get_by_genres(movies, genres):
     -------------------------------------------------------
     """
     gmovies = []
-    sorted_genres = sorted(genres)  # Sort a copy of genres to avoid modifying the original
+    sorted_genres = sorted(genres)
     
     for movie in movies:
         if all(genre in movie.genres for genre in sorted_genres):

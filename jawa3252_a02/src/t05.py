@@ -8,21 +8,13 @@ Email:   jawa3252@mylaurier.ca
 __updated__ = "2025-01-14"
 -------------------------------------------------------
 """
-
-#Imports
-from Movie_utilities import get_by_year, read_movies
+from Movie import Movie
+from Movie_utilities import genre_counts, read_movies
 
 fv = open("movies.txt", "r")
-movies = read_movies(fv)
+movie = read_movies(fv)
+    
+count = genre_counts(movie)
 
-year = 2005
-
-moviesy = get_by_year(movies, year)
-print(f"Year selected: {year}")
-print("Movies: ")
-print()
-for i in range(len(moviesy)):
-    print(moviesy[i])
-    print()
-
-
+for i in range(len(Movie.GENRES)):
+    print(f"{Movie.GENRES[i]} Has: {count[i]}")
