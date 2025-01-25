@@ -68,3 +68,18 @@ def vowel_count(s):
     -------------------------------------------------------
     """
     
+    if len(s) > 0:
+        c = s[0]
+        s = s[1:]
+        
+        if c.islower():
+            count = 1 + vowel_count(s)
+            
+        else:
+            count = vowel_count(s)
+            
+    else:
+        count = 0
+        
+    return count
+    
