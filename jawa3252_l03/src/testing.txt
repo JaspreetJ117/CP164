@@ -1,0 +1,457 @@
+"""
+-------------------------------------------------------
+Testing
+-------------------------------------------------------
+Author:  Jaspreet Jawanda
+ID:      169083252
+Email:   jawa3252@mylaurier.ca
+Version: 2025-01-21
+-------------------------------------------------------
+"""
+-------------------------------------------------------
+t01
+
+Inserting elements into the queue:
+Inserting 1 into the queue.
+Queue now contains: [1]
+Inserting 2 into the queue.
+Queue now contains: [1, 2]
+Inserting 3 into the queue.
+Queue now contains: [1, 2, 3]
+Inserting 4 into the queue.
+Queue now contains: [1, 2, 3, 4]
+Inserting 5 into the queue.
+Queue now contains: [1, 2, 3, 4, 5]
+Inserting 6 into the queue.
+Queue now contains: [1, 2, 3, 4, 5, 6]
+Inserting 7 into the queue.
+Queue now contains: [1, 2, 3, 4, 5, 6, 7]
+Inserting 8 into the queue.
+Queue now contains: [1, 2, 3, 4, 5, 6, 7, 8]
+Inserting 9 into the queue.
+Queue now contains: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+Inserting 0 into the queue.
+Queue now contains: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t02
+
+Inserting elements into the queue:
+Queue now contains: [10, 20, 30, 40, 50]
+
+Peeking at the front element: 10
+
+Removing elements from the queue:
+Removed 10 from the queue.
+Next element to be removed: 20
+Queue now contains: [20, 30, 40, 50]
+Removed 20 from the queue.
+Next element to be removed: 30
+Queue now contains: [30, 40, 50]
+Removed 30 from the queue.
+Next element to be removed: 40
+Queue now contains: [40, 50]
+Removed 40 from the queue.
+Next element to be removed: 50
+Queue now contains: [50]
+Removed 50 from the queue.
+The queue is now empty.
+Queue now contains: []
+
+
+Inserting elements into the queue:
+Queue now contains: []
+
+Removing elements from the queue:
+
+
+Inserting elements into the queue:
+Queue now contains: [1]
+
+Peeking at the front element: 1
+
+Removing elements from the queue:
+Removed 1 from the queue.
+The queue is now empty.
+Queue now contains: []
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t03
+
+Original source array: [10, 20, 30, 40, 50]
+Source array after populating queue: []
+Queue after populating from source: [10, 20, 30, 40, 50]
+Queue after transferring to target array: []
+Target array after receiving queue contents: [10, 20, 30, 40, 50]
+
+Testing queue operations:
+Testing an empty queue:
+Is the queue empty? (Expected: True): True
+Length of the queue (Expected: 0): 0
+Cannot peek or remove from an empty queue.
+
+Inserting elements into the queue:
+Inserted 60. Queue length is now 1.
+Inserted 70. Queue length is now 2.
+Inserted 80. Queue length is now 3.
+Inserted 90. Queue length is now 4.
+Inserted 100. Queue length is now 5.
+
+Testing a non-empty queue:
+Is the queue empty? (Expected: False): False
+Peek at the front of the queue (Expected: first element of a): 60
+
+Removing elements from the queue:
+Removed 60. Queue length is now 4.
+Removed 70. Queue length is now 3.
+Removed 80. Queue length is now 2.
+Removed 90. Queue length is now 1.
+Removed 100. Queue length is now 0.
+
+Final state of the queue:
+Is the queue empty? (Expected: True): True
+Length of the queue (Expected: 0): 0
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t04 
+
+The highest priority value is: 1
+
+The highest priority value is: Apple
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t05
+
+Removed: 10
+Removed: 20
+Removed: 30
+
+Removed: Apple
+Removed: Banana
+Removed: Mango
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t06
+
+Moving items from list to priority queue:
+All items moved to priority queue. List is now empty: True
+
+Moving items from priority queue back to list:
+All items moved back to list. Priority queue is now empty: True
+Items in list: 21
+
+Inserted Title:    Dellamorte Dellamore
+Year:     1994
+Director: Michele Soavi
+Rating:   7.2
+Genres:   romance, comedy, zombie, horror onto the Queue. Top of Queue is now: Title:    Dellamorte Dellamore
+Year:     1994
+Director: Michele Soavi
+Rating:   7.2
+Genres:   romance, comedy, zombie, horror
+Inserted Title:    Dark City
+Year:     1998
+Director: Alex Proyas
+Rating:   7.8
+Genres:   science fiction onto the Queue. Top of Queue is now: Title:    Dark City
+Year:     1998
+Director: Alex Proyas
+Rating:   7.8
+Genres:   science fiction
+Inserted Title:    Zulu
+Year:     1964
+Director: Cy Endfield
+Rating:   7.8
+Genres:   war onto the Queue. Top of Queue is now: Title:    Dark City
+Year:     1998
+Director: Alex Proyas
+Rating:   7.8
+Genres:   science fiction
+Inserted Title:    I Am Legend
+Year:     2007
+Director: Francis Lawrence
+Rating:   7.1
+Genres:   science fiction, action onto the Queue. Top of Queue is now: Title:    Dark City
+Year:     1998
+Director: Alex Proyas
+Rating:   7.8
+Genres:   science fiction
+Inserted Title:    Omega Man, The
+Year:     1971
+Director: Boris Sagal
+Rating:   6.6
+Genres:   science fiction, action onto the Queue. Top of Queue is now: Title:    Dark City
+Year:     1998
+Director: Alex Proyas
+Rating:   7.8
+Genres:   science fiction
+Inserted Title:    Last Man On Earth, The
+Year:     1964
+Director: Ubaldo Ragona
+Rating:   6.9
+Genres:   science fiction onto the Queue. Top of Queue is now: Title:    Dark City
+Year:     1998
+Director: Alex Proyas
+Rating:   7.8
+Genres:   science fiction
+Inserted Title:    Alphaville
+Year:     1965
+Director: Jean-Luc Godard
+Rating:   7.1
+Genres:   science fiction, comedy onto the Queue. Top of Queue is now: Title:    Alphaville
+Year:     1965
+Director: Jean-Luc Godard
+Rating:   7.1
+Genres:   science fiction, comedy
+Inserted Title:    Stardust
+Year:     2007
+Director: Matthew Vaughn
+Rating:   7.7
+Genres:   fantasy, comedy onto the Queue. Top of Queue is now: Title:    Alphaville
+Year:     1965
+Director: Jean-Luc Godard
+Rating:   7.1
+Genres:   science fiction, comedy
+Inserted Title:    Juno
+Year:     2007
+Director: Jason Reitman
+Rating:   7.7
+Genres:   romance, comedy onto the Queue. Top of Queue is now: Title:    Alphaville
+Year:     1965
+Director: Jean-Luc Godard
+Rating:   7.1
+Genres:   science fiction, comedy
+Inserted Title:    Darjeeling Limited, The
+Year:     2007
+Director: Wes Anderson
+Rating:   7.1
+Genres:   comedy onto the Queue. Top of Queue is now: Title:    Alphaville
+Year:     1965
+Director: Jean-Luc Godard
+Rating:   7.1
+Genres:   science fiction, comedy
+Inserted Title:    Broken Flowers
+Year:     2005
+Director: Jim Jarmusch
+Rating:   7.2
+Genres:   romance, comedy onto the Queue. Top of Queue is now: Title:    Alphaville
+Year:     1965
+Director: Jean-Luc Godard
+Rating:   7.1
+Genres:   science fiction, comedy
+Inserted Title:    Star Wars: Episode IV - A New Hope
+Year:     1977
+Director: George Lucas
+Rating:   8.7
+Genres:   science fiction, action onto the Queue. Top of Queue is now: Title:    Alphaville
+Year:     1965
+Director: Jean-Luc Godard
+Rating:   7.1
+Genres:   science fiction, comedy
+Inserted Title:    Horror of Dracula
+Year:     1958
+Director: Terence Fisher
+Rating:   7.4
+Genres:   horror onto the Queue. Top of Queue is now: Title:    Alphaville
+Year:     1965
+Director: Jean-Luc Godard
+Rating:   7.1
+Genres:   science fiction, comedy
+Inserted Title:    Jason and the Argonauts
+Year:     1963
+Director: Don Chaffey
+Rating:   7.4
+Genres:   fantasy, action onto the Queue. Top of Queue is now: Title:    Alphaville
+Year:     1965
+Director: Jean-Luc Godard
+Rating:   7.1
+Genres:   science fiction, comedy
+Inserted Title:    Wrong Box, The
+Year:     1966
+Director: Bryan Forbes
+Rating:   7.0
+Genres:   comedy onto the Queue. Top of Queue is now: Title:    Alphaville
+Year:     1965
+Director: Jean-Luc Godard
+Rating:   7.1
+Genres:   science fiction, comedy
+Inserted Title:    Finding Dory
+Year:     2016
+Director: Andrew Stanton, Angus MacLane
+Rating:   7.5
+Genres:   comedy onto the Queue. Top of Queue is now: Title:    Alphaville
+Year:     1965
+Director: Jean-Luc Godard
+Rating:   7.1
+Genres:   science fiction, comedy
+Inserted Title:    Manos: The Hands of Fate
+Year:     1966
+Director: Harold P. Warren
+Rating:   1.9
+Genres:   horror onto the Queue. Top of Queue is now: Title:    Alphaville
+Year:     1965
+Director: Jean-Luc Godard
+Rating:   7.1
+Genres:   science fiction, comedy
+Inserted Title:    Incredibly Strange Creatures Who Stopped Living and Became Mixed-Up Zombies!!?, The
+Year:     1964
+Director: Ray Dennis Steckler
+Rating:   2.2
+Genres:   horror onto the Queue. Top of Queue is now: Title:    Alphaville
+Year:     1965
+Director: Jean-Luc Godard
+Rating:   7.1
+Genres:   science fiction, comedy
+Inserted Title:    Z
+Year:     1969
+Director: Costa-Gavras
+Rating:   8.2
+Genres:   drama onto the Queue. Top of Queue is now: Title:    Alphaville
+Year:     1965
+Director: Jean-Luc Godard
+Rating:   7.1
+Genres:   science fiction, comedy
+Inserted Title:    Wonder Woman
+Year:     2017
+Director: Patty Jenkins
+Rating:   8.1
+Genres:   fantasy, action onto the Queue. Top of Queue is now: Title:    Alphaville
+Year:     1965
+Director: Jean-Luc Godard
+Rating:   7.1
+Genres:   science fiction, comedy
+Inserted Title:    Zulu
+Year:     2013
+Director: Jerome Salle
+Rating:   6.7
+Genres:   drama onto the Queue. Top of Queue is now: Title:    Alphaville
+Year:     1965
+Director: Jean-Luc Godard
+Rating:   7.1
+Genres:   science fiction, comedy
+Test is_empty after inserting: False
+Removed Title:    Alphaville
+Year:     1965
+Director: Jean-Luc Godard
+Rating:   7.1
+Genres:   science fiction, comedy from the queue.
+Removed Title:    Broken Flowers
+Year:     2005
+Director: Jim Jarmusch
+Rating:   7.2
+Genres:   romance, comedy from the queue.
+Removed Title:    Darjeeling Limited, The
+Year:     2007
+Director: Wes Anderson
+Rating:   7.1
+Genres:   comedy from the queue.
+Removed Title:    Dark City
+Year:     1998
+Director: Alex Proyas
+Rating:   7.8
+Genres:   science fiction from the queue.
+Removed Title:    Dellamorte Dellamore
+Year:     1994
+Director: Michele Soavi
+Rating:   7.2
+Genres:   romance, comedy, zombie, horror from the queue.
+Removed Title:    Finding Dory
+Year:     2016
+Director: Andrew Stanton, Angus MacLane
+Rating:   7.5
+Genres:   comedy from the queue.
+Removed Title:    Horror of Dracula
+Year:     1958
+Director: Terence Fisher
+Rating:   7.4
+Genres:   horror from the queue.
+Removed Title:    I Am Legend
+Year:     2007
+Director: Francis Lawrence
+Rating:   7.1
+Genres:   science fiction, action from the queue.
+Removed Title:    Incredibly Strange Creatures Who Stopped Living and Became Mixed-Up Zombies!!?, The
+Year:     1964
+Director: Ray Dennis Steckler
+Rating:   2.2
+Genres:   horror from the queue.
+Removed Title:    Jason and the Argonauts
+Year:     1963
+Director: Don Chaffey
+Rating:   7.4
+Genres:   fantasy, action from the queue.
+Removed Title:    Juno
+Year:     2007
+Director: Jason Reitman
+Rating:   7.7
+Genres:   romance, comedy from the queue.
+Removed Title:    Last Man On Earth, The
+Year:     1964
+Director: Ubaldo Ragona
+Rating:   6.9
+Genres:   science fiction from the queue.
+Removed Title:    Manos: The Hands of Fate
+Year:     1966
+Director: Harold P. Warren
+Rating:   1.9
+Genres:   horror from the queue.
+Removed Title:    Omega Man, The
+Year:     1971
+Director: Boris Sagal
+Rating:   6.6
+Genres:   science fiction, action from the queue.
+Removed Title:    Star Wars: Episode IV - A New Hope
+Year:     1977
+Director: George Lucas
+Rating:   8.7
+Genres:   science fiction, action from the queue.
+Removed Title:    Stardust
+Year:     2007
+Director: Matthew Vaughn
+Rating:   7.7
+Genres:   fantasy, comedy from the queue.
+Removed Title:    Wonder Woman
+Year:     2017
+Director: Patty Jenkins
+Rating:   8.1
+Genres:   fantasy, action from the queue.
+Removed Title:    Wrong Box, The
+Year:     1966
+Director: Bryan Forbes
+Rating:   7.0
+Genres:   comedy from the queue.
+Removed Title:    Z
+Year:     1969
+Director: Costa-Gavras
+Rating:   8.2
+Genres:   drama from the queue.
+Removed Title:    Zulu
+Year:     1964
+Director: Cy Endfield
+Rating:   7.8
+Genres:   war from the queue.
+Removed Title:    Zulu
+Year:     2013
+Director: Jerome Salle
+Rating:   6.7
+Genres:   drama from the queue.
+Test is_empty after popping all items: True
+
+-------------------------------------------------------
+
+        for i in range (len(self._values)):
+            if self._first not None:
+                if self._value[i] < self._value[self._first]:
+                    self._value[self._first] = self.value[i]
+            else:
+                self._value[self._first] = self.value[i]

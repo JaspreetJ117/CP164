@@ -91,4 +91,49 @@ class Stack:
         value = deepcopy(self._values[-1])
         
         return value
+    
+    def split_alt(self):
+        """
+        -------------------------------------------------------
+        Splits the source stack into separate target stacks with values
+        alternating into the targets. At finish source stack is empty.
+        Use: target1, target2 = source.split_alt()
+        -------------------------------------------------------
+        Returns:
+            target1 - contains alternating values from source (Stack)
+            target2 - contains other alternating values from source (Stack)
+        -------------------------------------------------------
+        """
+        
+        i = 0
+        target1 = Stack()
+        target2 = Stack()
+        
+        while self._values:
+            i += 1
+            value = self._values.pop()
+            
+            if i%2 == 0:
+                target1._values.append(value)
+            
+            else:
+                target2._values.append(value)
+                
+        return target1, target2
+     
+    def reverse(self):
+        """
+        -------------------------------------------------------
+        Reverses the contents of the source stack.
+        Use: source.reverse()
+        -------------------------------------------------------
+        Returns:
+            None
+        -------------------------------------------------------
+        """
+        
+        self._values.reverse()
+
+        return None
+        
         
