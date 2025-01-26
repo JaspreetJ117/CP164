@@ -9,6 +9,9 @@ __updated__ = "2025-01-24"
 -------------------------------------------------------
 """
 
+#Constants 
+VOWELS = "aeiou"
+
 def recurse(x, y):
     """
     -------------------------------------------------------
@@ -72,7 +75,7 @@ def vowel_count(s):
         c = s[0]
         s = s[1:]
         
-        if c.islower():
+        if c.lower() in VOWELS:
             count = 1 + vowel_count(s)
             
         else:
@@ -82,4 +85,5 @@ def vowel_count(s):
         count = 0
         
     return count
+
     
