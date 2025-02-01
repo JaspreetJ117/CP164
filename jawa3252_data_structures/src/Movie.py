@@ -65,7 +65,7 @@ class Movie:
             A new Movie object (Movie)
         -------------------------------------------------------
         """
-        assert year >= Movie.FIRST_YEAR, "Movie year must be >= {}".format(
+        assert year is None or year >= Movie.FIRST_YEAR, "Movie year must be >= {}".format(
             Movie.FIRST_YEAR)
         assert rating is None or Movie.MIN_RATING <= rating <= Movie.MAX_RATING, \
             "Movie ratings must be between {} and {}".format(
@@ -166,10 +166,14 @@ Genres:   {}""".format(self.title, self.year, self.director, self.rating, genres
 
         # Your code here
         string = ""
-        for i in range(len(self.genres)):
-            string += (f"{Movie.GENRES[self.genres[i]]}")
-            if i != len(self.genres) - 1:
-                string += ", "
+        if self.genres is not None:
+            for i in range(len(self.genres)):
+                string += (f"{Movie.GENRES[self.genres[i]]}")
+                if i != len(self.genres) - 1:
+                    string += ", "
+        
+        else:
+            string = None
         
         return string
 

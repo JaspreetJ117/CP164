@@ -1,0 +1,283 @@
+"""
+-------------------------------------------------------
+Testing
+-------------------------------------------------------
+Author:  Jaspreet Jawanda
+ID:      169083252
+Email:   jawa3252@mylaurier.ca
+Version: 2025-01-21
+-------------------------------------------------------
+"""
+-------------------------------------------------------
+t01
+
+Title:    None
+Year:     None
+Director: None
+Rating:   None
+Genres:   None
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t03
+
+Appending elements to the list...
+List after appends: [10, 20, 30]
+
+Inserting an element at index 1...
+List after insert: [10, 15, 20, 30]
+
+Removing the element '20'...
+Removed value: 20
+List after removal: [10, 15, 30]
+
+Attempting to remove a non-existent element '40'...
+Result of removal: None
+List after failed removal attempt: [10, 15, 30]
+
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t04
+
+The index of the first occurrence of '20': 1
+The value found for '30': 30
+Is '20' in the list? True
+The count of '10' in the list: 2
+The maximum value in the list: 30
+The minimum value in the list: 10
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t05
+
+The second item in the list: 20
+Setting the second item in the list to 25...
+Trying to access index out of range:
+Error: Invalid index value
+Trying to set index out of range:
+Error: Invalid index value
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t06
+
+List after array_to_list:
+1 2 3 4 5 
+Python list after list_to_array: [1, 2, 3, 4, 5]
+List is empty after transfer: True
+
+-------------------------------------------------------
+
+-------------------------------------------------------
+t07
+
+[<Movie.Movie object at 0x000002500D43B350>, <Movie.Movie object at 0x000002500D43B3B0>, <Movie.Movie object at 0x000002500D43B410>, <Movie.Movie object at 0x000002500D43B470>, <Movie.Movie object at 0x000002500D43B4D0>, <Movie.Movie object at 0x000002500D43B530>, <Movie.Movie object at 0x000002500D43B590>, <Movie.Movie object at 0x000002500D43B5F0>, <Movie.Movie object at 0x000002500D43B650>, <Movie.Movie object at 0x000002500D43B6B0>, <Movie.Movie object at 0x000002500D43B710>, <Movie.Movie object at 0x000002500D43B770>, <Movie.Movie object at 0x000002500D43B7D0>, <Movie.Movie object at 0x000002500D43B830>, <Movie.Movie object at 0x000002500D43B890>, <Movie.Movie object at 0x000002500D43B8F0>, <Movie.Movie object at 0x000002500D43B950>, <Movie.Movie object at 0x000002500D43B9B0>, <Movie.Movie object at 0x000002500D43BA10>, <Movie.Movie object at 0x000002500D43BA70>, <Movie.Movie object at 0x000002500D43BAD0>]
+Testing the List class...
+New list created. Is empty: True (Expected: True)
+Appended: 
+Title:    Dellamorte Dellamore
+Year:     1994
+Director: Michele Soavi
+Rating:   7.2
+Genres:   romance, comedy, zombie, horror to list. New list: 
+[<Movie.Movie object at 0x000002500D43BB60>]
+Appended: 
+Title:    Dark City
+Year:     1998
+Director: Alex Proyas
+Rating:   7.8
+Genres:   science fiction to list. New list: 
+[<Movie.Movie object at 0x000002500D43BB60>, <Movie.Movie object at 0x000002500D43BBC0>]
+Appended: 
+Title:    Zulu
+Year:     1964
+Director: Cy Endfield
+Rating:   7.8
+Genres:   war to list. New list: 
+[<Movie.Movie object at 0x000002500D43BB60>, <Movie.Movie object at 0x000002500D43BBC0>, <Movie.Movie object at 0x000002500D43BC20>]
+Appended: 
+Title:    I Am Legend
+Year:     2007
+Director: Francis Lawrence
+Rating:   7.1
+Genres:   science fiction, action to list. New list: 
+[<Movie.Movie object at 0x000002500D43BB60>, <Movie.Movie object at 0x000002500D43BBC0>, <Movie.Movie object at 0x000002500D43BC20>, <Movie.Movie object at 0x000002500D43BC80>]
+Appended: 
+Title:    Omega Man, The
+Year:     1971
+Director: Boris Sagal
+Rating:   6.6
+Genres:   science fiction, action to list. New list: 
+[<Movie.Movie object at 0x000002500D43BB60>, <Movie.Movie object at 0x000002500D43BBC0>, <Movie.Movie object at 0x000002500D43BC20>, <Movie.Movie object at 0x000002500D43BC80>, <Movie.Movie object at 0x000002500D43BCE0>]
+Appended: 
+Title:    Last Man On Earth, The
+Year:     1964
+Director: Ubaldo Ragona
+Rating:   6.9
+Genres:   science fiction to list. New list: 
+[<Movie.Movie object at 0x000002500D43BB60>, <Movie.Movie object at 0x000002500D43BBC0>, <Movie.Movie object at 0x000002500D43BC20>, <Movie.Movie object at 0x000002500D43BC80>, <Movie.Movie object at 0x000002500D43BCE0>, <Movie.Movie object at 0x000002500D43BD40>]
+Appended: 
+Title:    Alphaville
+Year:     1965
+Director: Jean-Luc Godard
+Rating:   7.1
+Genres:   science fiction, comedy to list. New list: 
+[<Movie.Movie object at 0x000002500D43BB60>, <Movie.Movie object at 0x000002500D43BBC0>, <Movie.Movie object at 0x000002500D43BC20>, <Movie.Movie object at 0x000002500D43BC80>, <Movie.Movie object at 0x000002500D43BCE0>, <Movie.Movie object at 0x000002500D43BD40>, <Movie.Movie object at 0x000002500D43BDA0>]
+Appended: 
+Title:    Stardust
+Year:     2007
+Director: Matthew Vaughn
+Rating:   7.7
+Genres:   fantasy, comedy to list. New list: 
+[<Movie.Movie object at 0x000002500D43BB60>, <Movie.Movie object at 0x000002500D43BBC0>, <Movie.Movie object at 0x000002500D43BC20>, <Movie.Movie object at 0x000002500D43BC80>, <Movie.Movie object at 0x000002500D43BCE0>, <Movie.Movie object at 0x000002500D43BD40>, <Movie.Movie object at 0x000002500D43BDA0>, <Movie.Movie object at 0x000002500D43BE00>]
+Appended: 
+Title:    Juno
+Year:     2007
+Director: Jason Reitman
+Rating:   7.7
+Genres:   romance, comedy to list. New list: 
+[<Movie.Movie object at 0x000002500D43BB60>, <Movie.Movie object at 0x000002500D43BBC0>, <Movie.Movie object at 0x000002500D43BC20>, <Movie.Movie object at 0x000002500D43BC80>, <Movie.Movie object at 0x000002500D43BCE0>, <Movie.Movie object at 0x000002500D43BD40>, <Movie.Movie object at 0x000002500D43BDA0>, <Movie.Movie object at 0x000002500D43BE00>, <Movie.Movie object at 0x000002500D43BE60>]
+Appended: 
+Title:    Darjeeling Limited, The
+Year:     2007
+Director: Wes Anderson
+Rating:   7.1
+Genres:   comedy to list. New list: 
+[<Movie.Movie object at 0x000002500D43BB60>, <Movie.Movie object at 0x000002500D43BBC0>, <Movie.Movie object at 0x000002500D43BC20>, <Movie.Movie object at 0x000002500D43BC80>, <Movie.Movie object at 0x000002500D43BCE0>, <Movie.Movie object at 0x000002500D43BD40>, <Movie.Movie object at 0x000002500D43BDA0>, <Movie.Movie object at 0x000002500D43BE00>, <Movie.Movie object at 0x000002500D43BE60>, <Movie.Movie object at 0x000002500D43BEC0>]
+Appended: 
+Title:    Broken Flowers
+Year:     2005
+Director: Jim Jarmusch
+Rating:   7.2
+Genres:   romance, comedy to list. New list: 
+[<Movie.Movie object at 0x000002500D43BB60>, <Movie.Movie object at 0x000002500D43BBC0>, <Movie.Movie object at 0x000002500D43BC20>, <Movie.Movie object at 0x000002500D43BC80>, <Movie.Movie object at 0x000002500D43BCE0>, <Movie.Movie object at 0x000002500D43BD40>, <Movie.Movie object at 0x000002500D43BDA0>, <Movie.Movie object at 0x000002500D43BE00>, <Movie.Movie object at 0x000002500D43BE60>, <Movie.Movie object at 0x000002500D43BEC0>, <Movie.Movie object at 0x000002500D43BF20>]
+Appended: 
+Title:    Star Wars: Episode IV - A New Hope
+Year:     1977
+Director: George Lucas
+Rating:   8.7
+Genres:   science fiction, action to list. New list: 
+[<Movie.Movie object at 0x000002500D43BB60>, <Movie.Movie object at 0x000002500D43BBC0>, <Movie.Movie object at 0x000002500D43BC20>, <Movie.Movie object at 0x000002500D43BC80>, <Movie.Movie object at 0x000002500D43BCE0>, <Movie.Movie object at 0x000002500D43BD40>, <Movie.Movie object at 0x000002500D43BDA0>, <Movie.Movie object at 0x000002500D43BE00>, <Movie.Movie object at 0x000002500D43BE60>, <Movie.Movie object at 0x000002500D43BEC0>, <Movie.Movie object at 0x000002500D43BF20>, <Movie.Movie object at 0x000002500D43BF80>]
+Appended: 
+Title:    Horror of Dracula
+Year:     1958
+Director: Terence Fisher
+Rating:   7.4
+Genres:   horror to list. New list: 
+[<Movie.Movie object at 0x000002500D43BB60>, <Movie.Movie object at 0x000002500D43BBC0>, <Movie.Movie object at 0x000002500D43BC20>, <Movie.Movie object at 0x000002500D43BC80>, <Movie.Movie object at 0x000002500D43BCE0>, <Movie.Movie object at 0x000002500D43BD40>, <Movie.Movie object at 0x000002500D43BDA0>, <Movie.Movie object at 0x000002500D43BE00>, <Movie.Movie object at 0x000002500D43BE60>, <Movie.Movie object at 0x000002500D43BEC0>, <Movie.Movie object at 0x000002500D43BF20>, <Movie.Movie object at 0x000002500D43BF80>, <Movie.Movie object at 0x000002500D43BFE0>]
+Appended: 
+Title:    Jason and the Argonauts
+Year:     1963
+Director: Don Chaffey
+Rating:   7.4
+Genres:   fantasy, action to list. New list: 
+[<Movie.Movie object at 0x000002500D43BB60>, <Movie.Movie object at 0x000002500D43BBC0>, <Movie.Movie object at 0x000002500D43BC20>, <Movie.Movie object at 0x000002500D43BC80>, <Movie.Movie object at 0x000002500D43BCE0>, <Movie.Movie object at 0x000002500D43BD40>, <Movie.Movie object at 0x000002500D43BDA0>, <Movie.Movie object at 0x000002500D43BE00>, <Movie.Movie object at 0x000002500D43BE60>, <Movie.Movie object at 0x000002500D43BEC0>, <Movie.Movie object at 0x000002500D43BF20>, <Movie.Movie object at 0x000002500D43BF80>, <Movie.Movie object at 0x000002500D43BFE0>, <Movie.Movie object at 0x000002500D454080>]
+Appended: 
+Title:    Wrong Box, The
+Year:     1966
+Director: Bryan Forbes
+Rating:   7.0
+Genres:   comedy to list. New list: 
+[<Movie.Movie object at 0x000002500D43BB60>, <Movie.Movie object at 0x000002500D43BBC0>, <Movie.Movie object at 0x000002500D43BC20>, <Movie.Movie object at 0x000002500D43BC80>, <Movie.Movie object at 0x000002500D43BCE0>, <Movie.Movie object at 0x000002500D43BD40>, <Movie.Movie object at 0x000002500D43BDA0>, <Movie.Movie object at 0x000002500D43BE00>, <Movie.Movie object at 0x000002500D43BE60>, <Movie.Movie object at 0x000002500D43BEC0>, <Movie.Movie object at 0x000002500D43BF20>, <Movie.Movie object at 0x000002500D43BF80>, <Movie.Movie object at 0x000002500D43BFE0>, <Movie.Movie object at 0x000002500D454080>, <Movie.Movie object at 0x000002500D4540E0>]
+Appended: 
+Title:    Finding Dory
+Year:     2016
+Director: Andrew Stanton, Angus MacLane
+Rating:   7.5
+Genres:   comedy to list. New list: 
+[<Movie.Movie object at 0x000002500D43BB60>, <Movie.Movie object at 0x000002500D43BBC0>, <Movie.Movie object at 0x000002500D43BC20>, <Movie.Movie object at 0x000002500D43BC80>, <Movie.Movie object at 0x000002500D43BCE0>, <Movie.Movie object at 0x000002500D43BD40>, <Movie.Movie object at 0x000002500D43BDA0>, <Movie.Movie object at 0x000002500D43BE00>, <Movie.Movie object at 0x000002500D43BE60>, <Movie.Movie object at 0x000002500D43BEC0>, <Movie.Movie object at 0x000002500D43BF20>, <Movie.Movie object at 0x000002500D43BF80>, <Movie.Movie object at 0x000002500D43BFE0>, <Movie.Movie object at 0x000002500D454080>, <Movie.Movie object at 0x000002500D4540E0>, <Movie.Movie object at 0x000002500D454140>]
+Appended: 
+Title:    Manos: The Hands of Fate
+Year:     1966
+Director: Harold P. Warren
+Rating:   1.9
+Genres:   horror to list. New list: 
+[<Movie.Movie object at 0x000002500D43BB60>, <Movie.Movie object at 0x000002500D43BBC0>, <Movie.Movie object at 0x000002500D43BC20>, <Movie.Movie object at 0x000002500D43BC80>, <Movie.Movie object at 0x000002500D43BCE0>, <Movie.Movie object at 0x000002500D43BD40>, <Movie.Movie object at 0x000002500D43BDA0>, <Movie.Movie object at 0x000002500D43BE00>, <Movie.Movie object at 0x000002500D43BE60>, <Movie.Movie object at 0x000002500D43BEC0>, <Movie.Movie object at 0x000002500D43BF20>, <Movie.Movie object at 0x000002500D43BF80>, <Movie.Movie object at 0x000002500D43BFE0>, <Movie.Movie object at 0x000002500D454080>, <Movie.Movie object at 0x000002500D4540E0>, <Movie.Movie object at 0x000002500D454140>, <Movie.Movie object at 0x000002500D4541A0>]
+Appended: 
+Title:    Incredibly Strange Creatures Who Stopped Living and Became Mixed-Up Zombies!!?, The
+Year:     1964
+Director: Ray Dennis Steckler
+Rating:   2.2
+Genres:   horror to list. New list: 
+[<Movie.Movie object at 0x000002500D43BB60>, <Movie.Movie object at 0x000002500D43BBC0>, <Movie.Movie object at 0x000002500D43BC20>, <Movie.Movie object at 0x000002500D43BC80>, <Movie.Movie object at 0x000002500D43BCE0>, <Movie.Movie object at 0x000002500D43BD40>, <Movie.Movie object at 0x000002500D43BDA0>, <Movie.Movie object at 0x000002500D43BE00>, <Movie.Movie object at 0x000002500D43BE60>, <Movie.Movie object at 0x000002500D43BEC0>, <Movie.Movie object at 0x000002500D43BF20>, <Movie.Movie object at 0x000002500D43BF80>, <Movie.Movie object at 0x000002500D43BFE0>, <Movie.Movie object at 0x000002500D454080>, <Movie.Movie object at 0x000002500D4540E0>, <Movie.Movie object at 0x000002500D454140>, <Movie.Movie object at 0x000002500D4541A0>, <Movie.Movie object at 0x000002500D454200>]
+Appended: 
+Title:    Z
+Year:     1969
+Director: Costa-Gavras
+Rating:   8.2
+Genres:   drama to list. New list: 
+[<Movie.Movie object at 0x000002500D43BB60>, <Movie.Movie object at 0x000002500D43BBC0>, <Movie.Movie object at 0x000002500D43BC20>, <Movie.Movie object at 0x000002500D43BC80>, <Movie.Movie object at 0x000002500D43BCE0>, <Movie.Movie object at 0x000002500D43BD40>, <Movie.Movie object at 0x000002500D43BDA0>, <Movie.Movie object at 0x000002500D43BE00>, <Movie.Movie object at 0x000002500D43BE60>, <Movie.Movie object at 0x000002500D43BEC0>, <Movie.Movie object at 0x000002500D43BF20>, <Movie.Movie object at 0x000002500D43BF80>, <Movie.Movie object at 0x000002500D43BFE0>, <Movie.Movie object at 0x000002500D454080>, <Movie.Movie object at 0x000002500D4540E0>, <Movie.Movie object at 0x000002500D454140>, <Movie.Movie object at 0x000002500D4541A0>, <Movie.Movie object at 0x000002500D454200>, <Movie.Movie object at 0x000002500D454260>]
+Appended: 
+Title:    Wonder Woman
+Year:     2017
+Director: Patty Jenkins
+Rating:   8.1
+Genres:   fantasy, action to list. New list: 
+[<Movie.Movie object at 0x000002500D43BB60>, <Movie.Movie object at 0x000002500D43BBC0>, <Movie.Movie object at 0x000002500D43BC20>, <Movie.Movie object at 0x000002500D43BC80>, <Movie.Movie object at 0x000002500D43BCE0>, <Movie.Movie object at 0x000002500D43BD40>, <Movie.Movie object at 0x000002500D43BDA0>, <Movie.Movie object at 0x000002500D43BE00>, <Movie.Movie object at 0x000002500D43BE60>, <Movie.Movie object at 0x000002500D43BEC0>, <Movie.Movie object at 0x000002500D43BF20>, <Movie.Movie object at 0x000002500D43BF80>, <Movie.Movie object at 0x000002500D43BFE0>, <Movie.Movie object at 0x000002500D454080>, <Movie.Movie object at 0x000002500D4540E0>, <Movie.Movie object at 0x000002500D454140>, <Movie.Movie object at 0x000002500D4541A0>, <Movie.Movie object at 0x000002500D454200>, <Movie.Movie object at 0x000002500D454260>, <Movie.Movie object at 0x000002500D4542C0>]
+Appended: 
+Title:    Zulu
+Year:     2013
+Director: Jerome Salle
+Rating:   6.7
+Genres:   drama to list. New list: 
+[<Movie.Movie object at 0x000002500D43BB60>, <Movie.Movie object at 0x000002500D43BBC0>, <Movie.Movie object at 0x000002500D43BC20>, <Movie.Movie object at 0x000002500D43BC80>, <Movie.Movie object at 0x000002500D43BCE0>, <Movie.Movie object at 0x000002500D43BD40>, <Movie.Movie object at 0x000002500D43BDA0>, <Movie.Movie object at 0x000002500D43BE00>, <Movie.Movie object at 0x000002500D43BE60>, <Movie.Movie object at 0x000002500D43BEC0>, <Movie.Movie object at 0x000002500D43BF20>, <Movie.Movie object at 0x000002500D43BF80>, <Movie.Movie object at 0x000002500D43BFE0>, <Movie.Movie object at 0x000002500D454080>, <Movie.Movie object at 0x000002500D4540E0>, <Movie.Movie object at 0x000002500D454140>, <Movie.Movie object at 0x000002500D4541A0>, <Movie.Movie object at 0x000002500D454200>, <Movie.Movie object at 0x000002500D454260>, <Movie.Movie object at 0x000002500D4542C0>, <Movie.Movie object at 0x000002500D454320>]
+Removed Title:    Dellamorte Dellamore
+Year:     1994
+Director: Michele Soavi
+Rating:   7.2
+Genres:   romance, comedy, zombie, horror from list. Removed: Title:    Dellamorte Dellamore
+Year:     1994
+Director: Michele Soavi
+Rating:   7.2
+Genres:   romance, comedy, zombie, horror (Expected: Title:    Dellamorte Dellamore
+Year:     1994
+Director: Michele Soavi
+Rating:   7.2
+Genres:   romance, comedy, zombie, horror)
+New list: [<Movie.Movie object at 0x000002500D4546E0>, <Movie.Movie object at 0x000002500D4546B0>, <Movie.Movie object at 0x000002500D454680>, <Movie.Movie object at 0x000002500D454650>, <Movie.Movie object at 0x000002500D454620>, <Movie.Movie object at 0x000002500D4545F0>, <Movie.Movie object at 0x000002500D4545C0>, <Movie.Movie object at 0x000002500D454590>, <Movie.Movie object at 0x000002500D454560>, <Movie.Movie object at 0x000002500D454530>, <Movie.Movie object at 0x000002500D454500>, <Movie.Movie object at 0x000002500D4544D0>, <Movie.Movie object at 0x000002500D4544A0>, <Movie.Movie object at 0x000002500D454470>, <Movie.Movie object at 0x000002500D454440>, <Movie.Movie object at 0x000002500D454410>, <Movie.Movie object at 0x000002500D4543E0>, <Movie.Movie object at 0x000002500D4543B0>, <Movie.Movie object at 0x000002500D454380>, <Movie.Movie object at 0x000002500D454350>]
+List equality test: False (Expected: True)
+Max value of list: Title:    Zulu
+Year:     2013
+Director: Jerome Salle
+Rating:   6.7
+Genres:   drama (Expected: Title:    Zulu
+Year:     2013
+Director: Jerome Salle
+Rating:   6.7
+Genres:   drama)
+Min value of list: Title:    Alphaville
+Year:     1965
+Director: Jean-Luc Godard
+Rating:   7.1
+Genres:   science fiction, comedy (Expected: Title:    Alphaville
+Year:     1965
+Director: Jean-Luc Godard
+Rating:   7.1
+Genres:   science fiction, comedy)
+Find Title:    Dellamorte Dellamore
+Year:     1994
+Director: Michele Soavi
+Rating:   7.2
+Genres:   romance, comedy, zombie, horror in list: Found None (Expected: Title:    Dellamorte Dellamore
+Year:     1994
+Director: Michele Soavi
+Rating:   7.2
+Genres:   romance, comedy, zombie, horror)
+Index of Title:    Dellamorte Dellamore
+Year:     1994
+Director: Michele Soavi
+Rating:   7.2
+Genres:   romance, comedy, zombie, horror in list: -1 (Expected: 0)
+Count of Title:    Dellamorte Dellamore
+Year:     1994
+Director: Michele Soavi
+Rating:   7.2
+Genres:   romance, comedy, zombie, horror in list: 0 (Expected: 1)
+Insert test at index 0: ['test', <Movie.Movie object at 0x000002500D4546E0>, <Movie.Movie object at 0x000002500D4546B0>, <Movie.Movie object at 0x000002500D454680>, <Movie.Movie object at 0x000002500D454650>, <Movie.Movie object at 0x000002500D454620>, <Movie.Movie object at 0x000002500D4545F0>, <Movie.Movie object at 0x000002500D4545C0>, <Movie.Movie object at 0x000002500D454590>, <Movie.Movie object at 0x000002500D454560>, <Movie.Movie object at 0x000002500D454530>, <Movie.Movie object at 0x000002500D454500>, <Movie.Movie object at 0x000002500D4544D0>, <Movie.Movie object at 0x000002500D4544A0>, <Movie.Movie object at 0x000002500D454470>, <Movie.Movie object at 0x000002500D454440>, <Movie.Movie object at 0x000002500D454410>, <Movie.Movie object at 0x000002500D4543E0>, <Movie.Movie object at 0x000002500D4543B0>, <Movie.Movie object at 0x000002500D454380>, <Movie.Movie object at 0x000002500D454350>] (Expected: [test, ...rest of list...])
+
+-------------------------------------------------------

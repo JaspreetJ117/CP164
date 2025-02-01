@@ -5,20 +5,23 @@
 Author:  Jaspreet Jawanda
 ID:      169083252
 Email:   jawa3252@mylaurier.ca
-__updated__ = "2025-01-13"
+__updated__ = "2025-01-28"
 -------------------------------------------------------
 """
 
-from Stack_array import Stack
-from utilities import stack_test
-from Movie_utilities import read_movie
+from Movie_utilities import read_movies
+from utilities import list_test
+from List_array import List
 
-s = Stack()
+movies = List()
 
 fh = open("movies.txt", "r", encoding="utf-8")
-movie = []
 
-for line in fh:
-    movie.append(read_movie(line))
+movie = read_movies(fh)
 
-stack_test(movie)
+for each in movie:
+    movies.append(each)
+    
+print(movies._values)
+    
+list_test(movies)
