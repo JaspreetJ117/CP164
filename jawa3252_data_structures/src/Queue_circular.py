@@ -95,11 +95,9 @@ class Queue:
         equals = True
         
         if self._count != target._count:
-            # Queues have different number of elements
             equals = False
         else:
             for i in range(self._count):
-                # Calculate the actual index in the circular array
                 index_self = (self._front + i) % self._capacity
                 index_other = (target._front + i) % target._capacity
                 if self._values[index_self] != target._values[index_other]:

@@ -129,3 +129,63 @@ class Queue:
         """
         for value in self._values:
             yield value
+            
+    def __eq__(self, target):
+        """
+        ----------------
+        Determines whether two Queues are equal.
+        Values in self and target are compared and if all values are equal
+        and in the same order, returns True, otherwise returns False.
+        Use: equals = source == target
+        ---------------
+        Parameters:
+            target - a queue (Queue)
+        Returns:
+            equals - True if source contains the same values
+                as target in the same order, otherwise False. (boolean)
+        ---------------
+        """
+        
+        equals = False
+        i = 0
+        
+        if len(self._values) == len(target._values):
+            while i < len(self._values) and self._values[i] == target._values[i]:
+                i += 1
+ 
+            if i == len(self._values):
+                equals = True
+        
+        return equals
+    
+    def combine(self, source1, source2):
+        """
+        -------------------------------------------------------
+        Combines two source queues into the current target queue.
+        When finished, the contents of source1 and source2 are interlaced
+        into target and source1 and source2 are empty.
+        Order of source values is preserved.
+        (iterative algorithm)
+        Use: target.combine(source1, source2)
+        -------------------------------------------------------
+        Parameters:
+            source1 - an array-based queue (Queue)
+            source2 - an array-based queue (Queue)
+        Returns:
+            None
+        -------------------------------------------------------
+        """
+
+        if not source1._values and not source2._values:
+            print("Both source queues are empty.")
+        
+        else:
+            while source1._values or source2._values:  
+                if source1._values:  
+                    self._values.append(deepcopy(source1._values.pop(0)))
+                
+                if not source1._values:
+                    if source2._values:  
+                        self._values.append(deepcopy(source2._values.pop(0)))
+        
+        return None
