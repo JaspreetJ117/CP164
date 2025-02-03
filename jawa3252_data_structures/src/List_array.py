@@ -368,8 +368,17 @@ class List:
                 as target in the same order, otherwise False. (boolean)
         -------------------------------------------------------
         """
+        equals = False
+        i = 0
+        
+        if len(self._values) == len(target._values):
+            while i < len(self._values) and self._values[i] == target._values[i]:
+                i += 1
+            
+            if i == len(self._values):
+                equals = True   
 
-        return self._values == target._values
+        return equals
 
     def max(self):
         """
