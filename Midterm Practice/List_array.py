@@ -670,25 +670,25 @@ class List:
             yield value
             
     def split(self):
-    """
-    -------------------------------------------------------
-    Splits list into two parts. target1 contains the first half,
-    target2 the second half. Current list becomes empty.
-    Use: target1, target2 = source.split()
-    -------------------------------------------------------
-    Returns:
-        target1 - a new List with >= 50% of the original List (List)
-        target2 - a new List with <= 50% of the original List (List)
-    -------------------------------------------------------
-    """
-    # Ensure target1 gets at least half (favoring the first half if odd)
-    midpoint = (len(self._values) + 1) // 2  
-
-    target1 = List()
-    target2 = List()
-
-    target1._values = self._values[:midpoint]
-    target2._values = self._values[midpoint:]
-    self._values = []
-
-    return target1, target2
+        """
+        -------------------------------------------------------
+        Splits list into two parts. target1 contains the first half,
+        target2 the second half. Current list becomes empty.
+        Use: target1, target2 = source.split()
+        -------------------------------------------------------
+        Returns:
+            target1 - a new List with >= 50% of the original List (List)
+            target2 - a new List with <= 50% of the original List (List)
+        -------------------------------------------------------
+        """
+        # Ensure target1 gets at least half (favoring the first half if odd)
+        midpoint = (len(self._values) + 1) // 2  
+    
+        target1 = List()
+        target2 = List()
+    
+        target1._values = self._values[:midpoint]
+        target2._values = self._values[midpoint:]
+        self._values = []
+    
+        return target1, target2
