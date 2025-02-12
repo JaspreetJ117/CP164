@@ -131,7 +131,7 @@ class List:
         -------------------------------------------------------
         Swaps the position of two elements in the data list.
         The element originally at position i is now at position j,
-        and visa versa.
+        and vice versa.
         Private helper operations called only from within class.
         Use: self._swap(i, j)
         -------------------------------------------------------
@@ -144,10 +144,9 @@ class List:
         """
         assert self._is_valid_index(i), 'Invalid index i'
         assert self._is_valid_index(j), 'Invalid index j'
-
-        # Your code here
-        self._values[i], self._values[j] = deepcopy(self._values[j]), deepcopy(self._values[i])
-        
+        i_index = i if i >= 0 else len(self._values) + i
+        j_index = j if j >= 0 else len(self._values) + j
+        self._values[i_index], self._values[j_index] = self._values[j_index], self._values[i_index]
         return None
 
     def append(self, value):
@@ -181,9 +180,8 @@ class List:
         -------------------------------------------------------
         """
         # Your code here
-        for i in range(0,len(self._values)):
-            func(self._values[i]) 
-        return None
+
+        return
 
     def clean(self):
         """
@@ -332,15 +330,17 @@ class List:
             None
         -------------------------------------------------------
         """
-        self._values = []
-        set1 = set(source1._values)
-        set2 = set(source2._values)
-        intersection = set1.intersection(set2)
 
-        for value in intersection:
-            self.append(value)
+        for value in source1._values:
+            if value in source2._values:
+                self._values.append(value)
 
+        seen = set()
+        unique = [x for x in self._values if not (x in seen or seen.add(x))]
+        self._values = unique
+        
         return
+
 
     def is_empty(self):
         """
@@ -434,9 +434,8 @@ class List:
         assert (len(self._values) > 0), 'Cannot peek at an empty list'
 
         # Your code here
-        value = deepcopy(self._values[0])
-        
-        return value
+
+        return deepcopy(self._values[0])
 
     def pop(self, *args):
         """
@@ -458,11 +457,11 @@ class List:
         assert len(args) <= 1, "No more than 1 argument allowed"
 
         if len(args) == 1:
-            # pop the element at position i
+        
             i = args[0]
             value = self._values.pop(i)
         else:
-            # pop the last element
+            
             value = self._values.pop()
         return value
 
@@ -480,7 +479,7 @@ class List:
         """
         self._values.insert(0, deepcopy(value))
 
-        return
+        return None
 
     def remove(self, key):
         """
@@ -544,34 +543,11 @@ class List:
         -------------------------------------------------------
         """
         # Your code here
-        length = len(self._values) - 1
-        swaps = length//2 
         
-        for i in range(0,swaps):
-            self._values[length-i], self._values[i] = self._values[i], self._values[length-i] 
-        
-        return None
+        for i in range(len(self._values) // 2):
+            self._values[i], self._values[-i - 1] = self._values[-i - 1], self._values[i]
 
-    def split(self):
-        """
-        -------------------------------------------------------
-        Splits list into two parts. target1 contains the first half,
-        target2 the second half. Current list becomes empty.
-        Use: target1, target2 = source.split()
-        -------------------------------------------------------
-        Returns:
-            target1 - a new List with >= 50% of the original List (List)
-            target2 - a new List with <= 50% of the original List (List)
-        -------------------------------------------------------
-        """
-        midpoint = len(self._values) // 2
-        target1 = List()
-        target2 = List()
-
-        target1._values, target2._values = self._values[:midpoint], self._values[midpoint:]
-        self._values = []
-
-        return target1, target2
+        return
 
     def split_alt(self):
         """
@@ -613,20 +589,16 @@ class List:
             target2 - a new List with values where func(value) is False (List)
         -------------------------------------------------------
         """
-        # Your code here
         target1 = List()
         target2 = List()
-        iterator = 0
-        
-        while self._values:
+
+        while len(self._values) > 0:
             value = self._values.pop(0)
-            iterator += 1
-            
-            if value:
-                target1._values.append(value)
+            if func(value):
+                target1.append(value)
             else:
-                target2._values.append(value)
-        
+                target2.append(value)
+
         return target1, target2
 
     def split_key(self, key):
@@ -644,17 +616,16 @@ class List:
             target2 - a new List of values >= key (List)
         -------------------------------------------------------
         """
-        # Your code here
-        
         target1 = List()
         target2 = List()
-        
-        while self._values:
-            value = self._values.pop()
+
+        # Process each element and append to the suitable target
+        while len(self._values) > 0:
+            value = self._values.pop(0)
             if value < key:
-                target1._values.append(value)
+                target1.append(value)
             else:
-                target2._values.append(value)
+                target2.append(value)
 
         return target1, target2
 
@@ -672,8 +643,15 @@ class List:
             None
         -------------------------------------------------------
         """
-        self._values = list(set(source1._values + source2._values))
-
+        self._values = deepcopy(source1._values)
+        for value in source2._values:
+            if value not in self._values:
+                self._values.append(deepcopy(value))
+                
+        seen = set()
+        unique = [x for x in self._values if not (x in seen or seen.add(x))]
+        self._values = unique
+        
         return
 
     def __iter__(self):
@@ -690,3 +668,27 @@ class List:
         """
         for value in self._values:
             yield value
+            
+    def split(self):
+    """
+    -------------------------------------------------------
+    Splits list into two parts. target1 contains the first half,
+    target2 the second half. Current list becomes empty.
+    Use: target1, target2 = source.split()
+    -------------------------------------------------------
+    Returns:
+        target1 - a new List with >= 50% of the original List (List)
+        target2 - a new List with <= 50% of the original List (List)
+    -------------------------------------------------------
+    """
+    # Ensure target1 gets at least half (favoring the first half if odd)
+    midpoint = (len(self._values) + 1) // 2  
+
+    target1 = List()
+    target2 = List()
+
+    target1._values = self._values[:midpoint]
+    target2._values = self._values[midpoint:]
+    self._values = []
+
+    return target1, target2

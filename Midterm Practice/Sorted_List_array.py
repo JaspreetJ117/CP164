@@ -39,14 +39,12 @@ class Sorted_List:
         """
 
         # Your code here
-        i = 0
-        is_it = False
+        is_it = True
         
-        while i < len(self._values) and not is_it:
-            if self._values[i] == key:
-                is_it = True
-            else:
-                i += 1
+        i = self._binary_search(key)
+        
+        if i == -1:
+            is_it = False
         
         return is_it
 
@@ -150,20 +148,19 @@ class Sorted_List:
         ---------------------------------------------------------
         Removes duplicates from source.
         Use: source.clean()
-        -------------------------------------------------------
+        ---------------------------------------------------------
         Returns:
             source contains one and only one of each value formerly present
             in source. The first occurrence of each value is preserved.
-        -------------------------------------------------------
+        ---------------------------------------------------------
         """
-        # Your code here
-        clean_values = [self._values[0]]
+        if self._values: 
+            clean_values = [self._values[0]]
+            for value in self._values[1:]:
+                if value != clean_values[-1]:
+                    clean_values.append(value)
 
-        for value in self._values[1:]:
-            if value != clean_values[-1]:
-                clean_values.append(value)
-                
-        self._values = clean_values
+            self._values = clean_values
         return None
 
     def combine(self, source1, source2):
@@ -183,20 +180,16 @@ class Sorted_List:
             None
         -------------------------------------------------------
         """
-        # Interlace elements while both source lists have items
         while source1._values and source2._values:
             self._values.append(deepcopy(source1._values.pop(0)))
             self._values.append(deepcopy(source2._values.pop(0)))
         
-        # Append remaining elements from source1, if any
         while source1._values:
             self._values.append(deepcopy(source1._values.pop(0)))
         
-        # Append remaining elements from source2, if any
         while source2._values:
             self._values.append(deepcopy(source2._values.pop(0)))
         
-        # Sort the target list
         self._values.sort()
         
         return None
@@ -358,7 +351,7 @@ class Sorted_List:
         Values in self and target are compared and if all values are equal
         and in the same order, returns True, otherwise returns False.
         Use: equals = source == target
-        ---------------
+        ---------------------------------------------------------
         Parameters:
             target - a list (Sorted_Lists)
         Returns:
@@ -367,8 +360,19 @@ class Sorted_List:
         -------------------------------------------------------
         """
         # Your code here
-
-        return
+        
+        equals = True
+        i = 0
+        
+        if len(self._values) != len(target._values):
+            equals = False
+        else:
+            while i < len(self._values) and equals:
+                if self._values[i] != target._values[i]:
+                    equals = False
+                i += 1
+        
+        return equals
 
     def max(self):
         """
@@ -437,11 +441,9 @@ class Sorted_List:
         assert len(args) <= 1, "No more than 1 argument allowed"
 
         if len(args) == 1:
-            # pop the element at position i
             i = args[0]
             value = self._values.pop(i)
         else:
-            # pop the last element
             value = self._values.pop()
         return value
 
@@ -459,8 +461,14 @@ class Sorted_List:
         -------------------------------------------------------
         """
         # Your code here
+        
+        value = None
+        i = self._binary_search(key)
+        
+        if i != -1:
+            value = deepcopy(self._values.pop(i))
 
-        return
+        return value
 
     def remove_front(self):
         """
@@ -475,8 +483,8 @@ class Sorted_List:
         assert (len(self._values) > 0), 'Cannot remove from an empty list'
 
         # Your code here
-
-        return
+        
+        return deepcopy(self._values.pop(0))
 
     def remove_many(self, key):
         """
@@ -491,8 +499,14 @@ class Sorted_List:
         ---------------------------------------------------------
         """
         # Your code here
+        i = 0
+        
+        while i != -1:
+            i = self._binary_search(key)
+            if i != -1:
+                self._values.pop(i)
 
-        return
+        return None
 
     def split(self):
         """
@@ -507,27 +521,48 @@ class Sorted_List:
         -------------------------------------------------------
         """
         # Your code here
+        target1 = Sorted_List()
+        target2 = Sorted_List()
 
-        return
+        mid = (len(self._values) + 1) // 2 
+
+        target1._values = self._values[:mid]
+        target2._values = self._values[mid:]
+
+        self._values = []  
+
+        return target1, target2
 
     def split_alt(self):
         """
         -------------------------------------------------------
-        Split a List into two parts. target1 contains the even indexed
-        elements, target2 contains the odd indexed elements.
-        source is empty after the function executes.
-        (iterative version)
+        Splits a List into two parts. target1 contains the even-indexed
+        elements, and target2 contains the odd-indexed elements.
+        The source list becomes empty after the function executes.
+        (Iterative version)
         Use: target1, target2 = source.split_alt()
         -------------------------------------------------------
         Returns:
-            target1 - the even indexed elements of the list (Sorted_List)
-            target2 - the odd indexed elements of the list (Sorted_List)
+            target1 - the even-indexed elements of the list (Sorted_List)
+            target2 - the odd-indexed elements of the list (Sorted_List)
         -------------------------------------------------------
         """
-        # Your code here
+        target1 = Sorted_List()
+        target2 = Sorted_List()
 
-        return
+        is_even = True 
 
+        while self._values:
+            if is_even:
+                target1._values.append(self._values.pop(0))
+            else:
+                target2._values.append(self._values.pop(0))
+            
+            is_even = not is_even  
+
+        return target1, target2
+
+   
     def split_apply(self, func):
         """
         -------------------------------------------------------
@@ -545,9 +580,17 @@ class Sorted_List:
             target2 - a new List with values where func(value) is False (List)
         -------------------------------------------------------
         """
-        # Your code here
+        target1 = Sorted_List()
+        target2 = Sorted_List()
 
-        return
+        while self._values:
+            value = self._values.pop(0)
+            if func(value):
+                target1._values.append(value)
+            else:
+                target2._values.append(value)
+                
+        return target1, target2
 
     def split_key(self, key):
         """
@@ -564,9 +607,17 @@ class Sorted_List:
             target2 - a new Sorted List with values >= key (Sorted_List)
         -------------------------------------------------------
         """
-        # Your code here
+        target1 = Sorted_List()
+        target2 = Sorted_List()
 
-        return
+        while self._values:
+            value = self._values.pop(0)
+            if value < key:
+                target1._values.append(value)
+            else:
+                target2._values.append(value)
+
+        return target1, target2
 
     def union(self, source1, source2):
         """
@@ -582,8 +633,38 @@ class Sorted_List:
             None
         -------------------------------------------------------
         """
-        # Your code here
+        new_values = []
+        i, j = 0, 0
+        while i < len(source1._values) and j < len(source2._values):
+            x = source1._values[i]
+            y = source2._values[j]
+            if x < y:
+                if not new_values or new_values[-1] != x:
+                    new_values.append(x)
+                i += 1
+            elif x > y:
+                if not new_values or new_values[-1] != y:
+                    new_values.append(y)
+                j += 1
+            else:
+                if not new_values or new_values[-1] != x:
+                    new_values.append(x)
+                i += 1
+                j += 1
 
+        while i < len(source1._values):
+            x = source1._values[i]
+            if not new_values or new_values[-1] != x:
+                new_values.append(x)
+            i += 1
+
+        while j < len(source2._values):
+            y = source2._values[j]
+            if not new_values or new_values[-1] != y:
+                new_values.append(y)
+            j += 1
+
+        self._values = new_values
         return
 
     def __iter__(self):
