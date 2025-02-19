@@ -100,7 +100,6 @@ class Priority_Queue:
         node = _PQ_Node(value,None)
         current = self._front
         previous = current
-        inserted = False
         
         if self._front is None or value < self._front._value:
             node._next = self._front
@@ -190,9 +189,41 @@ class Priority_Queue:
         -------------------------------------------------------
         """
 
-        # Your code here
+        target1 = Priority_Queue()
+        target2 = Priority_Queue()
+        current = self._front
+        count = 0
 
-        return
+        while current:
+            next_node = current._next 
+            current._next = None  
+
+            if not count % 2:
+                if target1._rear:
+                    target1._rear._next = current
+                else:
+                    target1._front = current
+                target1._rear = current
+                target1._count += 1
+
+            else:
+         
+                if target2._rear:
+                    target2._rear._next = current
+                else:
+                    target2._front = current
+                target2._rear = current
+                target2._count += 1
+
+            current = next_node 
+            count += 1
+
+
+        self._front = None
+        self._rear = None
+        self._count = 0
+
+        return target1, target2
 
     def split_key(self, key):
         """
@@ -212,9 +243,40 @@ class Priority_Queue:
         -------------------------------------------------------
         """
 
-        # Your code here
+        target1 = Priority_Queue()
+        target2 = Priority_Queue()
 
-        return
+        current = self._front
+
+        while current:
+            next_node = current._next 
+            current._next = None  
+
+            if current._value < key:
+                if target1._rear:
+                    target1._rear._next = current
+                else:
+                    target1._front = current
+                target1._rear = current
+                target1._count += 1
+
+            else:
+         
+                if target2._rear:
+                    target2._rear._next = current
+                else:
+                    target2._front = current
+                target2._rear = current
+                target2._count += 1
+
+            current = next_node 
+
+
+        self._front = None
+        self._rear = None
+        self._count = 0
+
+        return target1, target2
 
     def combine(self, source1, source2):
         """
