@@ -297,9 +297,57 @@ class Priority_Queue:
         -------------------------------------------------------
         """
 
-        # Your code here
+        self._front = None
+        self._rear = None
+        self._count = 0
+
+        curr1 = source1._front
+        curr2 = source2._front
+
+        last = None
+
+        while curr1 is not None and curr2 is not None:
+            if curr1._value < curr2._value:
+                next_node = curr1
+                curr1 = curr1._next
+            else:
+                next_node = curr2
+                curr2 = curr2._next
+
+            if last is None:
+                self._front = next_node
+            else:
+                last._next = next_node
+
+            last = next_node
+            self._count += 1
+
+        remaining = curr1 if curr1 is not None else curr2
+
+        while remaining is not None:
+            next_node = remaining
+            remaining = remaining._next
+
+            if last is None:
+                self._front = next_node
+
+            else:
+                last._next = next_node
+
+            last = next_node
+            self._count += 1
+
+        self._rear = last
+
+        source1._front = None
+        source1._rear = None
+        source1._count = 0
+        source2._front = None
+        source2._rear = None
+        source2._count = 0
 
         return
+
 
     def _append_queue(self, source):
         """
@@ -316,8 +364,19 @@ class Priority_Queue:
         """
         assert source._front is not None, "Cannot append an empty priority queue"
 
+        if self._front is None:
+            self._front = source._front
+            self._rear = source._rear
 
-        # Your code here
+        else:
+            self._rear._next = source._front
+            self._rear = source._rear
+
+        self._count += source._count
+
+        source._front = None
+        source._rear = None
+        source._count = 0
 
         return
 
@@ -339,6 +398,28 @@ class Priority_Queue:
 
 
         # Your code here
+        node = source._front
+        
+        if source._front._next is None:
+            source._front = source._rear = None
+
+        else:
+            node = source._front
+            source_next = source._front._next
+            source._front = None
+            source._front = source_next
+
+        if self._front is None:
+            self._front = self._rear = node
+                
+        else:
+            self._rear._next = node
+            self._rear = node
+        
+        node._next = None
+        self._rear = node
+        source._count -= 1
+        self._count += 1
 
         return
 
