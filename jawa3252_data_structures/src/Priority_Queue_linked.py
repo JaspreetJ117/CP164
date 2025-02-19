@@ -143,8 +143,18 @@ class Priority_Queue:
 
 
         # Your code here
+        
+        value = deepcopy(self._front._value)
+        next = self._front._next
+    
+        self._front = None
+        self._front = next
+        self._count -= 1
+        
+        if self._front is None:
+            self._rear = None
 
-        return
+        return value
 
     def peek(self):
         """
@@ -162,7 +172,7 @@ class Priority_Queue:
 
         # Your code here
 
-        return deepcopy(self._front)
+        return deepcopy(self._front._value)
 
     def split_alt(self):
         """
