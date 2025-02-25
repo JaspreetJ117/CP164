@@ -5,7 +5,7 @@ Linked version of the Deque ADT.
 Author:  David Brown
 ID:      123456789
 Email:   dbrown@wlu.ca
-__updated__ = "2024-06-10"
+__updated__ = "2024-02-17"
 -------------------------------------------------------
 """
 # Imports
@@ -14,24 +14,24 @@ from copy import deepcopy
 
 class _Deque_Node:
 
-    def __init__(self, value, prev_, next_):
+    def __init__(self, value, _prev, _next):
         """
         -------------------------------------------------------
         Initializes a deque node.
-        Use: node = _Deque_Node(value, prev_, next_)
+        Use: node = _Deque_Node(value, _prev, _next)
         -------------------------------------------------------
         Parameters:
             value - value value for node (?)
-            prev_ - another deque node (_Deque_Node)
-            next_ - another deque node (_Deque_Node)
+            _prev - another deque node (_Deque_Node)
+            _next - another deque node (_Deque_Node)
         Returns:
             a new _Deque_Node object (_Deque_Node)
 
         -------------------------------------------------------
         """
         self._value = deepcopy(value)
-        self._prev = prev_
-        self._next = next_
+        self._prev = _prev
+        self._next = _next
 
 
 class Deque:
@@ -60,8 +60,8 @@ class Deque:
             True if the deque is empty, False otherwise.
         -------------------------------------------------------
         """
-		# your code here
-        return self._front is None
+
+        return (self._count == 0)
 
     def __len__(self):
         """
@@ -73,7 +73,7 @@ class Deque:
             the number of values in the deque (int)
         -------------------------------------------------------
         """
-		# your code here
+
         return self._count
 
     def __eq__(self, target):
@@ -91,8 +91,21 @@ class Deque:
                 as target in the same order, otherwise False. (boolean)
         -------------------------------------------------------
         """
-        # your code here
-        return
+        if self._count != target._count:
+            equals = False
+
+        else:
+            current_self = self._front
+            current_target = target._front
+            equals = True
+
+            while equals and current_self is not None:
+                if current_self._value != current_target._value:
+                    equals = False
+                current_self = current_self._next
+                current_target = current_target._next
+
+        return equals
 
     def insert_front(self, value):
         """
@@ -106,38 +119,18 @@ class Deque:
             None
         -------------------------------------------------------
         """
-		# your code here
 
-        node = _Deque_Node(value,None,None)
-        current = self._front
-        previous = current
-        
-        if self._front is None or value < self._front._value:
-            node._next = self._front
-            self._front = node
-            
-            if self._rear is None:
-                self._rear = node
-            
-            self._count += 1
-            
-        elif value > self._rear._value:
-            self._rear._next = node
+        node = _Deque_Node(deepcopy(value), None, self._front)
+
+        if self._front is None:
             self._rear = node
-            self._count += 1
-            
         else:
-            while current is not None and value > current._value:            
-                previous = current
-                current = current._next
-                
-                
-            node._next = current
-            previous._next = node
-            self._count += 1
+            self._front._prev = node
 
-        return None
+        self._front = node
+        self._count += 1
 
+        return
 
     def insert_rear(self, value):
         """
@@ -151,7 +144,18 @@ class Deque:
             None
         -------------------------------------------------------
         """
-		# your code here
+        node = _Deque_Node(value, self._rear, None)
+
+        if self._front is None:
+            self._front = node
+            self._rear = node
+
+        else:
+            self._rear._next = node
+            self._rear = node
+
+        self._count += 1
+
         return
 
     def remove_front(self):
@@ -165,20 +169,19 @@ class Deque:
         -------------------------------------------------------
         """
         assert self._front is not None, "Cannot remove from an empty deque"
-		
-		# your code here
-        value = deepcopy(self._front._value)
-        next = self._front._next
-        self._front._prev = None
-    
-        self._front = None
-        self._front = next
-        self._count -= 1
-        
-        if self._front is None:
-            self._rear = None
 
-        return value
+        value = self._front
+        self._front = self._front._next
+
+        self._count -= 1
+        if self._count == 0:
+            self._rear = None
+        else:
+            self._front._prev = None
+
+        returnvalue = deepcopy(value._value)
+
+        return returnvalue
 
     def remove_rear(self):
         """
@@ -192,8 +195,20 @@ class Deque:
         """
         assert self._rear is not None, "Cannot remove from an empty deque"
 
-		# your code here
-        return
+        value = self._rear
+        self._rear = self._rear._prev
+
+        self._count -= 1
+
+        if self._count == 0:
+            self._front = None
+
+        else:
+            self._rear._next = None
+
+        returnvalue = deepcopy(value._value)
+
+        return returnvalue
 
     def peek_front(self):
         """
@@ -207,9 +222,7 @@ class Deque:
         """
         assert self._front is not None, "Cannot peek at an empty deque"
 
-		# your code here
-  
-        return deepcopy(self._front._value) 
+        return deepcopy(self._front._value)
 
     def peek_rear(self):
         """
@@ -223,7 +236,6 @@ class Deque:
         """
         assert self._rear is not None, "Cannot peek at an empty deque"
 
-		# your code here
         return deepcopy(self._rear._value)
 
     def _swap(self, l, r):
@@ -243,7 +255,62 @@ class Deque:
         """
         assert l is not None and r is not None, "nodes to swap cannot be None"
 
-		# your code here
+        if l == r:
+            None
+
+        else:
+            l_prev = l._prev
+            r_prev = r._prev
+            l_next = l._next
+            r_next = r._next
+
+            if l._next == r:  # l is right before r
+                l._next = r_next
+                r._prev = l_prev
+                if l._next:
+                    l._next._prev = l
+                if r._prev:
+                    r._prev._next = r
+                l._prev = r
+                r._next = l
+
+            elif r._next == l:  # r is right before l
+                r._next = l_next
+                l._prev = r_prev
+                if r._next:
+                    r._next._prev = r
+                if l._prev:
+                    l._prev._next = l
+                r._prev = l
+                l._next = r
+
+            else:
+                l._prev = r_prev
+                l._next = r_next
+                r._prev = l_prev
+                r._next = l_next
+
+                if l._next:
+                    l._next._prev = l
+                if l._prev:
+                    l._prev._next = l
+                if r._next:
+                    r._next._prev = r
+                if r._prev:
+                    r._prev._next = r
+
+            if self._front == l:
+                self._front = r
+
+            elif self._front == r:
+                self._front = l
+
+            if self._rear == l:
+                self._rear = r
+
+            elif self._rear == r:
+                self._rear = l
+
         return
 
     def __iter__(self):
