@@ -391,29 +391,47 @@ class Sorted_List:
 
     def pop(self, *args):
         """
-        -------------------------------------------------------
-        Finds, removes, and returns the value in source with index i.
-        Use: value = source.pop()
-        Use: value = source.pop(i)
-        -------------------------------------------------------
-        Parameters:
-            args - an array of arguments (tuple of int)
-                args[0], if it exists, is the index i
-        Returns:
-            value - if args exists, the value at position args[0], otherwise 
-                the last value in source, value is removed from source (?)
-        -------------------------------------------------------
+        Removes and returns the value from the sorted linked list.
+        - If no index is provided, removes the last element.
+        - If an index is provided, removes the element at that position.
         """
-        assert len(self._values) > 0, "Cannot pop from an empty list"
+        assert self._front is not None, "Cannot pop from an empty list"
         assert len(args) <= 1, "No more than 1 argument allowed"
-
-        if len(args) == 1:
-            # pop the element at position i
+    
+        # If popping the first element
+        if len(args) == 0 or args[0] == self._count - 1:
+            value = self._rear._value
+            if self._front == self._rear:  # Only one element in the list
+                self._front = None
+                self._rear = None
+            else:
+                current = self._front
+                while current._next is not self._rear:
+                    current = current._next
+                current._next = None
+                self._rear = current
+    
+        else:  # Popping at a specific index
             i = args[0]
-            value = self._values.pop(i)
-        else:
-            # pop the last element
-            value = self._values.pop()
+            assert 0 <= i < self._count, "Index out of range"
+    
+            if i == 0:  # Removing first element
+                value = self._front._value
+                self._front = self._front._next
+                if self._front is None:  # If list becomes empty
+                    self._rear = None
+            else:  # Removing from the middle
+                current = self._front
+                previous = None
+                for _ in range(i):
+                    previous = current
+                    current = current._next
+                value = current._value
+                previous._next = current._next
+                if current == self._rear:
+                    self._rear = previous
+    
+        self._count -= 1
         return value
 
     def remove(self, key):
