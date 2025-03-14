@@ -201,8 +201,9 @@ class BST:
         self._root, value = self._remove_aux(self._root, key)
         return value
     
+    """
     def _remove_aux(self, node, key):
-        """
+        
         -------------------------------------------------------
         Attempts to find a value matching key in a BST node. Deletes the node
         if found and returns the sub-tree root.
@@ -216,7 +217,7 @@ class BST:
             node - the current node or its replacement (_BST_Node)
             value - value in node containing key, None otherwise.
         -------------------------------------------------------
-        """
+        
         if node is None:
             # Base Case: the key is not in the tree.
             value = None
@@ -255,6 +256,7 @@ class BST:
             # If the value was found, update the ancestor heights.
             node._update_height()
         return node, value
+    """
 
     def _delete_node_left(self, parent):
         """
@@ -324,9 +326,43 @@ class BST:
         """
 
         # your code here
+        
+        equals = True
+        count = -1
+        
+        if self._count != target._count:
+            equals = False
+        
+        else:
+            target_node = target._root
+            source_node = self._root
+            equals = self._eq_aux_(source_node, target_node, equals)
 
         return equals
+    
+    def _eq_aux_ (self, source_node, target_node, equals):
+        """
+        ---------------------------------------------------------
+        Determines whether two BSTs are equal.
+        Values in self and target are compared and if all values are equal
+        and in the same location, returns True, otherwise returns False.
+        ---------------------------------------------------------
+        """
+        
+        if source_node is None and target_node is None:
+            equals = True
+            
+        elif source_node is None or target_node is None:
+            equals = False
 
+        elif source_node._value != target_node._value:
+            equals = False
+
+        else:
+            equals = self._eq_aux_(source_node._left, target_node._left, equals) and self._eq_aux_(source_node._right, target_node._right, equals)
+        
+        return equals
+    
     def parent(self, key):
         """
         ---------------------------------------------------------
@@ -495,6 +531,13 @@ class BST:
         """
 
         # your code here
+        
+        balanced = True
+        node = self._root
+        
+        height += self._node_height(node)
+        
+        return balanced
 
 
     def _node_height(self, node):
