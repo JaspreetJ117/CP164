@@ -443,6 +443,25 @@ class BST:
         assert self._root is not None, "Cannot find minimum of an empty BST"
 
         # your code here
+        
+        min = self._aux_min(node = self._root)
+        
+        return min._value
+    
+    def _aux_min(self, node, min = None):
+        
+        if min is None:
+            min = node
+            
+        if node is not None:
+            
+            if node._value < min._value:
+                min = node
+            
+            min = self._aux_min(node._left, min) 
+            min = self._aux_min(node._right, min)
+        
+        return min
 
 
     def min_r(self):
@@ -472,7 +491,21 @@ class BST:
         """
 
         # your code here
-
+        count = self._leaf_aux(node = self._root)
+        
+        return count
+    
+    def _leaf_aux(self, node):
+        count = 0
+        
+        if node is not None:
+            if node._left is None and node._right is None:
+                count += 1
+            else:
+                count += self._leaf_aux(node._left)
+                count += self._leaf_aux(node._right)
+        
+        return count
 
     def two_child_count(self):
         """
@@ -517,28 +550,33 @@ class BST:
 
         # your code here
 
-
     def is_balanced(self):
         """
         ---------------------------------------------------------
-        Returns whether a bst is balanced, i.e. the difference in
-        height between all the bst's node's left and right subtrees is <= 1.
+        Returns whether a BST is balanced, i.e. the difference in
+        height between all the BST's node's left and right subtrees is <= 1.
         Use: b = bst.is_balanced()
         ---------------------------------------------------------
         Returns:
-            balanced - True if the bst is balanced, False otherwise (boolean)
+            balanced - True if the BST is balanced, False otherwise (boolean)
         ---------------------------------------------------------
         """
+        return self._is_bal_aux_(self._root)[1]
 
-        # your code here
-        
-        balanced = True
-        node = self._root
-        
-        height += self._node_height(node)
-        
-        return balanced
+    def _is_bal_aux_(self, node):
+        """
+        Helper function to check if the tree is balanced.
+        Returns the height of the subtree and whether it is balanced.
+        """
+        if node is None:
+            return 0, True 
 
+        left_height, left_balanced = self._is_bal_aux_(node._left)
+        right_height, right_balanced = self._is_bal_aux_(node._right)
+
+        balanced = left_balanced and right_balanced and abs(left_height - right_height) <= 1
+
+        return max(left_height, right_height) + 1, balanced
 
     def _node_height(self, node):
         """
@@ -589,7 +627,33 @@ class BST:
         ---------------------------------------------------------
         """
 
-        # your code here
+        valid = self._is_valid_aux(self._root, None, None)
+        return valid
+
+    def _is_valid_aux(self, node, min_node, max_node):
+
+        if node is None:
+
+            valid = True
+
+        elif min_node is not None and node._value <= min_node._value:
+
+            valid = False
+
+        elif max_node is not None and node._value >= max_node._value:
+
+            valid = False
+
+        elif node._height != max(self._node_height(node._left), self._node_height(node._right)) + 1:
+
+            valid = False
+
+        else:
+
+            valid = self._is_valid_aux(node._left, min_node, node) and self._is_valid_aux(
+                node._right, node, max_node)
+
+        return valid
 
 
     def inorder(self):
