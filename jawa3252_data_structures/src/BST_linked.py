@@ -379,6 +379,23 @@ class BST:
 
 
         # your code here
+        parent = None
+        node = self._root
+        
+        while node is not None and parent is None:
+            
+            if key < node._value:
+                if node._left is not None and node._left._value == key:
+                    parent = node._value
+                else:
+                    node = node._left
+            else:
+                if node._right is not None and node._right._value == key:
+                    parent = node._value
+                else:
+                    node = node._right
+                    
+        return parent
 
 
     def parent_r(self, key):
@@ -394,10 +411,29 @@ class BST:
         ---------------------------------------------------------
         """
         assert self._root is not None, "Cannot locate a parent in an empty BST"
-
-
-        # your code here
-
+        return self._parent_r_aux(self._root, key, None)
+    
+    def _parent_r_aux(self, node, key, parent):
+        """
+        ---------------------------------------------------------
+        Helper function for parent_r to find the parent node recursively.
+        ---------------------------------------------------------
+        Parameters:
+            node - the current node (_BST_Node)
+            key - the key to search for (?)
+            parent - the parent node (_BST_Node)
+        Returns:
+            value - the value of the parent node if found, None otherwise (?)
+        ---------------------------------------------------------
+        """
+        if node is None:
+            return None
+        elif node._value == key:
+            return deepcopy(parent._value) if parent is not None else None
+        elif key < node._value:
+            return self._parent_r_aux(node._left, key, node)
+        else:
+            return self._parent_r_aux(node._right, key, node)
 
     def max(self):
         """
@@ -585,8 +621,14 @@ class BST:
             two - number of nodes with two children (int)
         ----------------------------------------------------------
         """
-
+        
         # your code here
+        
+        zero = self._leaf_aux(node = self._root)
+        one = self._one_child_aux(node = self._root)
+        two = self._two_child_aux(node = self._root)
+        
+        return zero, one, two
 
     def is_balanced(self):
         """
