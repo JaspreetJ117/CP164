@@ -24,8 +24,13 @@ SORTS = (
     ('Selection Sort', Sorts.selection_sort),
 )
 
+for name, func in SORTS:
+    test_sort(name, func)
+
+"""
 test_sort(SORTS[0][0], SORTS[0][1])
 test_sort(SORTS[1][0], SORTS[1][1])
 test_sort(SORTS[2][0], SORTS[2][1])
 test_sort(SORTS[3][0], SORTS[3][1])
 test_sort(SORTS[4][0], SORTS[4][1])
+"""

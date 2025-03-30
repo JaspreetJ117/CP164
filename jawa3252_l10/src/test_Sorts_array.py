@@ -126,18 +126,20 @@ def test_sort(title, func):
     randomized = create_randoms()
 
     # sorted testing
-    func(sortee)
+    
     num1 = Number.comparisons
     num2 = round(Sorts.swaps, 0)
     Number.comparisons = 0
     Sorts.swaps = 0
+    func(sortee)
 
     # reversed testing
-    func(reversee)
+    
     num3 = Number.comparisons
     num4 = round(Sorts.swaps, 0)
     Number.comparisons = 0
     Sorts.swaps = 0
+    func(reversee)
 
     # randomized testing
     for each in randomized:

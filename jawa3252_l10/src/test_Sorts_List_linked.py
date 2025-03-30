@@ -133,13 +133,14 @@ def test_sort(title, func):
     num2 = round(Sorts.swaps, 0)
     Number.comparisons = 0
     Sorts.swaps = 0
-
+    
     # reversed testing
     func(reversee)
     num3 = Number.comparisons
     num4 = round(Sorts.swaps, 0)
     Number.comparisons = 0
     Sorts.swaps = 0
+    
 
     # randomized testing
     for each in randomized:
@@ -150,6 +151,4 @@ def test_sort(title, func):
     Sorts.swaps = 0
 
     print("{:14} {:8} {:8} {:8} {:8} {:8} {:8}".format(title, num1, num3, num5, num2, num4, num6))
-    return
-
     return

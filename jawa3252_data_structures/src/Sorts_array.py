@@ -711,3 +711,74 @@ class Sorts:
 
         a[i] = a[j]
         return
+    
+    @staticmethod
+    def _radix_sort(a, digit):
+        """
+        -------------------------------------------------------
+        Sorts an array based on a single digit.
+        Use: Sorts._radix_sort(a, digit)
+        -------------------------------------------------------
+        Parameters:
+            a - an array of base 10 integers (list)
+            digit - the digit to sort on (int)
+        Returns:
+            None
+        -------------------------------------------------------
+        """
+        buckets = [[] for _ in range(10)]
+        for value in a:
+            key = (value // 10 ** digit) % 10
+            buckets[key].append(value)
+        a.clear()
+        for bucket in buckets:
+            a.extend(bucket)
+        return
+    
+    @staticmethod
+    def radix_sort(a):
+        """
+        -------------------------------------------------------
+        Performs a base 10 radix sort.
+        Use: Sorts.radix_sort(a)
+        -------------------------------------------------------
+        Parameters:
+            a - an array of base 10 integers (list)
+        Returns:
+            None
+        -------------------------------------------------------
+        """
+        max_value = max(a)
+        max_digits = int(log10(max_value)) + 1
+        for i in range(max_digits):
+            Sorts._radix_sort(a, i)
+        return 
+    
+    @staticmethod
+    def gnome_sort(a):
+        """
+        -------------------------------------------------------
+        Sorts an array using the Gnome Sort algorithm.
+        Use: gnome_sort(a)
+        -------------------------------------------------------
+        Parameters:
+            a - an array of comparable elements (list)
+        Returns:
+            None
+        -------------------------------------------------------
+        """
+        pos = 1
+        
+        while pos < len(a):
+            if a[pos] >= a[pos - 1]:
+                pos += 1
+                
+            else:
+                Sorts._swap(a, pos, pos - 1)
+                if pos > 1:
+                    pos -= 1
+        return
+        
+    
+
+    
