@@ -577,4 +577,3 @@ class Sorts:
                 current = current._prev
 
         return
-    
